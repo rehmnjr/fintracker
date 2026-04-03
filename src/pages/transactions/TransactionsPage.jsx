@@ -1,0 +1,107 @@
+import React, { useState } from 'react';
+import { Plus, Download } from 'lucide-react';
+import FilterBar from '../../components/transactions/FilterBar';
+import TransactionTable from '../../components/transactions/TransactionTable';
+import TransactionForm from '../../components/transactions/TransactionForm';
+import { useApp } from '../../context/AppContext';
+import { useRole } from '../../hooks/useRole';
+import { useTransactions } from '../../hooks/useTransactions';
+import { exportToCSV } from '../../utils/calculateInsights';
+import { formatCurrency } from '../../utils/formatCurrency';
+
+export default function TransactionsPage() {
+  const { txLoading, transactions } = useApp();
+  const { can } = useRole();
+  const { filtered, totalIncome, totalExpenses } = useTransactions();
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [editData, setEditData] = useState(null);
+
+  const handleEdit = (txn) => {
+    setEditData(txn);
+    setModalOpen(true);
+  };
+
+  const handleClose = () => {
+    setModalOpen(false);
+    setEditData(null);
+  };
+
+  return (
+    <div className="p-6 space-y-5 animate-fade-in">
+      {/* Page header */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <p className="text-xs text-muted-foreground uppercase tracking-widest mb-0.5">
+            {filtered.length} Transactions
+          </p>
+          <h2 className="text-xl font-bold text-foreground">
+            Transaction{' '}
+            <span className="gradient-text">History</span>
+          </h2>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {/* Export */}
+          <button
+            id="export-csv"
+            onClick={() => exportToCSV(filtered)}
+            className="btn-ghost gap-2 text-xs border py-2"
+            style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+          >
+            <Download className="h-3.5 w-3.5" />
+            Export CSV
+          </button>
+
+          {/* Add transaction (admin only) */}
+          {can('add') && (
+            <button
+              id="add-transaction"
+              onClick={() => { setEditData(null); setModalOpen(true); }}
+              className="btn-primary text-xs"
+            >
+              <Plus className="h-4 w-4" />
+              Add Transaction
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Quick stats bar */}
+      <div className="grid grid-cols-3 gap-3">
+        {[
+          { label: 'Total Income', value: formatCurrency(totalIncome), color: '#34d399' },
+          { label: 'Total Expenses', value: formatCurrency(totalExpenses), color: '#fb7185' },
+          { label: 'Net', value: formatCurrency(totalIncome - totalExpenses), color: '#818cf8' },
+        ].map((stat) => (
+          <div
+            key={stat.label}
+            className="rounded-xl px-4 py-3"
+            style={{
+              background: 'rgba(255,255,255,0.03)',
+              border: '1px solid rgba(255,255,255,0.06)',
+            }}
+          >
+            <p className="text-xs text-muted-foreground">{stat.label}</p>
+            <p className="text-base font-bold mt-0.5" style={{ color: stat.color }}>
+              {stat.value}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Filter bar */}
+      <FilterBar />
+
+      {/* Table */}
+      <TransactionTable onEdit={handleEdit} loading={txLoading} />
+
+      {/* Modal */}
+      <TransactionForm
+        open={modalOpen}
+        onClose={handleClose}
+        editData={editData}
+      />
+    </div>
+  );
+}
