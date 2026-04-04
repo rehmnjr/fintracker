@@ -11,7 +11,7 @@
   {
     "id": "txn_001",
     "date": "2024-03-28",
-    "description": "Whole Foods Market",
+    "description": "Fresh Grocers",
     "category": "Groceries",
     "type": "expense",
     "amount": 127.43,
@@ -20,7 +20,7 @@
   {
     "id": "txn_002",
     "date": "2024-03-27",
-    "description": "Netflix Subscription",
+    "description": "Streaming Plus",
     "category": "Entertainment",
     "type": "expense",
     "amount": 249,
@@ -38,7 +38,7 @@
   {
     "id": "txn_004",
     "date": "2024-03-25",
-    "description": "Shell Gas Station",
+    "description": "City Gas Station",
     "category": "Transport",
     "type": "expense",
     "amount": 480,
@@ -47,7 +47,7 @@
   {
     "id": "txn_005",
     "date": "2024-03-24",
-    "description": "Amazon Prime",
+    "description": "Online Marketplace",
     "category": "Shopping",
     "type": "expense",
     "amount": 139.99,
@@ -56,7 +56,7 @@
   {
     "id": "txn_006",
     "date": "2024-03-23",
-    "description": "Starbucks",
+    "description": "Morning Brew Cafe",
     "category": "Food & Drink",
     "type": "expense",
     "amount": 300,
@@ -74,7 +74,7 @@
   {
     "id": "txn_008",
     "date": "2024-03-21",
-    "description": "Planet Fitness",
+    "description": "Downtown Gym",
     "category": "Health",
     "type": "expense",
     "amount": 24.99,
@@ -83,7 +83,7 @@
   {
     "id": "txn_009",
     "date": "2024-03-20",
-    "description": "AT&T Phone Bill",
+    "description": "Mobile Carrier",
     "category": "Utilities",
     "type": "expense",
     "amount": 89,
@@ -92,7 +92,7 @@
   {
     "id": "txn_010",
     "date": "2024-03-19",
-    "description": "Chipotle",
+    "description": "Quick Bites Grill",
     "category": "Food & Drink",
     "type": "expense",
     "amount": 22.5,
@@ -110,7 +110,7 @@
   {
     "id": "txn_012",
     "date": "2024-03-17",
-    "description": "Target",
+    "description": "General Store",
     "category": "Shopping",
     "type": "expense",
     "amount": 87.33,
@@ -137,7 +137,7 @@
   {
     "id": "txn_015",
     "date": "2024-03-14",
-    "description": "Uber Eats",
+    "description": "Food Delivery",
     "category": "Food & Drink",
     "type": "expense",
     "amount": 39.8,
@@ -146,7 +146,7 @@
   {
     "id": "txn_016",
     "date": "2024-03-13",
-    "description": "Spotify",
+    "description": "Music Stream",
     "category": "Entertainment",
     "type": "expense",
     "amount": 9.99,
@@ -164,7 +164,7 @@
   {
     "id": "txn_018",
     "date": "2024-03-11",
-    "description": "CVS Pharmacy",
+    "description": "Corner Pharmacy",
     "category": "Health",
     "type": "expense",
     "amount": 43.21,
@@ -173,7 +173,7 @@
   {
     "id": "txn_019",
     "date": "2024-03-10",
-    "description": "Apple App Store",
+    "description": "App Marketplace",
     "category": "Entertainment",
     "type": "expense",
     "amount": 6.99,
@@ -182,7 +182,7 @@
   {
     "id": "txn_020",
     "date": "2024-03-09",
-    "description": "Lyft",
+    "description": "City Rides",
     "category": "Transport",
     "type": "expense",
     "amount": 31.6,
@@ -191,7 +191,7 @@
   {
     "id": "txn_021",
     "date": "2024-03-08",
-    "description": "H&M",
+    "description": "Fashion Outlet",
     "category": "Shopping",
     "type": "expense",
     "amount": 95,
@@ -209,7 +209,7 @@
   {
     "id": "txn_023",
     "date": "2024-03-06",
-    "description": "Trader Joe's",
+    "description": "Neighborhood Market",
     "category": "Groceries",
     "type": "expense",
     "amount": 74.62,
@@ -227,7 +227,7 @@
   {
     "id": "txn_025",
     "date": "2024-03-04",
-    "description": "Steam",
+    "description": "Game Store",
     "category": "Entertainment",
     "type": "expense",
     "amount": 29.99,
@@ -245,7 +245,7 @@
   {
     "id": "txn_027",
     "date": "2024-03-02",
-    "description": "IKEA",
+    "description": "Home Furnishings Co",
     "category": "Shopping",
     "type": "expense",
     "amount": 220,
