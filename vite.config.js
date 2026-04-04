@@ -4,7 +4,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/fintracker/',
+  base: process.env.GITHUB_PAGES ? '/fintracker/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
