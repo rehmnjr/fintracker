@@ -56,3 +56,25 @@ export const exportToCSV = (transactions) => {
   document.body.removeChild(link);
   URL.revokeObjectURL(url);
 };
+
+export const exportToJSON = (transactions) => {
+  const data = transactions.map((t) => ({
+    date: t.date,
+    description: t.description,
+    category: t.category,
+    type: t.type,
+    amount: t.amount,
+    note: t.note || '',
+  }));
+
+  const jsonContent = JSON.stringify(data, null, 2);
+  const blob = new Blob([jsonContent], { type: 'application/json;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.setAttribute('download', `transactions_${new Date().toISOString().slice(0, 10)}.json`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+};

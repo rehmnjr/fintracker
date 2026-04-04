@@ -1,0 +1,281 @@
+[
+  {
+    "description": "Tution Salary",
+    "amount": 9000,
+    "category": "Education",
+    "type": "income",
+    "date": "2026-04-03",
+    "note": "Home Tution Salary",
+    "id": "txn_1775228811224"
+  },
+  {
+    "id": "txn_001",
+    "date": "2024-03-28",
+    "description": "Whole Foods Market",
+    "category": "Groceries",
+    "type": "expense",
+    "amount": 127.43,
+    "note": "Weekly grocery run"
+  },
+  {
+    "id": "txn_002",
+    "date": "2024-03-27",
+    "description": "Netflix Subscription",
+    "category": "Entertainment",
+    "type": "expense",
+    "amount": 249,
+    "note": "Monthly subscription"
+  },
+  {
+    "id": "txn_003",
+    "date": "2024-03-26",
+    "description": "Salary Deposit",
+    "category": "Income",
+    "type": "income",
+    "amount": 5800,
+    "note": "March payroll"
+  },
+  {
+    "id": "txn_004",
+    "date": "2024-03-25",
+    "description": "Shell Gas Station",
+    "category": "Transport",
+    "type": "expense",
+    "amount": 480,
+    "note": "Fuel refill"
+  },
+  {
+    "id": "txn_005",
+    "date": "2024-03-24",
+    "description": "Amazon Prime",
+    "category": "Shopping",
+    "type": "expense",
+    "amount": 139.99,
+    "note": "Annual membership"
+  },
+  {
+    "id": "txn_006",
+    "date": "2024-03-23",
+    "description": "Starbucks",
+    "category": "Food & Drink",
+    "type": "expense",
+    "amount": 300,
+    "note": "Coffee & snack"
+  },
+  {
+    "id": "txn_007",
+    "date": "2024-03-22",
+    "description": "Freelance Payment",
+    "category": "Income",
+    "type": "income",
+    "amount": 850,
+    "note": "Web design project"
+  },
+  {
+    "id": "txn_008",
+    "date": "2024-03-21",
+    "description": "Planet Fitness",
+    "category": "Health",
+    "type": "expense",
+    "amount": 24.99,
+    "note": "Monthly gym membership"
+  },
+  {
+    "id": "txn_009",
+    "date": "2024-03-20",
+    "description": "AT&T Phone Bill",
+    "category": "Utilities",
+    "type": "expense",
+    "amount": 89,
+    "note": "Monthly phone plan"
+  },
+  {
+    "id": "txn_010",
+    "date": "2024-03-19",
+    "description": "Chipotle",
+    "category": "Food & Drink",
+    "type": "expense",
+    "amount": 22.5,
+    "note": "Lunch with colleague"
+  },
+  {
+    "id": "txn_011",
+    "date": "2024-03-18",
+    "description": "Dividend Income",
+    "category": "Investments",
+    "type": "income",
+    "amount": 234.6,
+    "note": "Q1 dividend"
+  },
+  {
+    "id": "txn_012",
+    "date": "2024-03-17",
+    "description": "Target",
+    "category": "Shopping",
+    "type": "expense",
+    "amount": 87.33,
+    "note": "Household items"
+  },
+  {
+    "id": "txn_013",
+    "date": "2024-03-16",
+    "description": "Electricity Bill",
+    "category": "Utilities",
+    "type": "expense",
+    "amount": 112.4,
+    "note": "March electric"
+  },
+  {
+    "id": "txn_014",
+    "date": "2024-03-15",
+    "description": "Rent Payment",
+    "category": "Housing",
+    "type": "expense",
+    "amount": 1800,
+    "note": "March rent"
+  },
+  {
+    "id": "txn_015",
+    "date": "2024-03-14",
+    "description": "Uber Eats",
+    "category": "Food & Drink",
+    "type": "expense",
+    "amount": 39.8,
+    "note": "Dinner delivery"
+  },
+  {
+    "id": "txn_016",
+    "date": "2024-03-13",
+    "description": "Spotify",
+    "category": "Entertainment",
+    "type": "expense",
+    "amount": 9.99,
+    "note": "Monthly music"
+  },
+  {
+    "id": "txn_017",
+    "date": "2024-03-12",
+    "description": "Side Business Revenue",
+    "category": "Income",
+    "type": "income",
+    "amount": 620,
+    "note": "Consulting fees"
+  },
+  {
+    "id": "txn_018",
+    "date": "2024-03-11",
+    "description": "CVS Pharmacy",
+    "category": "Health",
+    "type": "expense",
+    "amount": 43.21,
+    "note": "Medication & vitamins"
+  },
+  {
+    "id": "txn_019",
+    "date": "2024-03-10",
+    "description": "Apple App Store",
+    "category": "Entertainment",
+    "type": "expense",
+    "amount": 6.99,
+    "note": "App subscription"
+  },
+  {
+    "id": "txn_020",
+    "date": "2024-03-09",
+    "description": "Lyft",
+    "category": "Transport",
+    "type": "expense",
+    "amount": 31.6,
+    "note": "Airport pickup"
+  },
+  {
+    "id": "txn_021",
+    "date": "2024-03-08",
+    "description": "H&M",
+    "category": "Shopping",
+    "type": "expense",
+    "amount": 95,
+    "note": "Clothes shopping"
+  },
+  {
+    "id": "txn_022",
+    "date": "2024-03-07",
+    "description": "Internet Bill",
+    "category": "Utilities",
+    "type": "expense",
+    "amount": 59.99,
+    "note": "Monthly internet"
+  },
+  {
+    "id": "txn_023",
+    "date": "2024-03-06",
+    "description": "Trader Joe's",
+    "category": "Groceries",
+    "type": "expense",
+    "amount": 74.62,
+    "note": "Groceries"
+  },
+  {
+    "id": "txn_024",
+    "date": "2024-03-05",
+    "description": "Dental Checkup",
+    "category": "Health",
+    "type": "expense",
+    "amount": 150,
+    "note": "Routine checkup"
+  },
+  {
+    "id": "txn_025",
+    "date": "2024-03-04",
+    "description": "Steam",
+    "category": "Entertainment",
+    "type": "expense",
+    "amount": 29.99,
+    "note": "Game purchase"
+  },
+  {
+    "id": "txn_026",
+    "date": "2024-03-03",
+    "description": "Interest Income",
+    "category": "Investments",
+    "type": "income",
+    "amount": 87.5,
+    "note": "Savings account interest"
+  },
+  {
+    "id": "txn_027",
+    "date": "2024-03-02",
+    "description": "IKEA",
+    "category": "Shopping",
+    "type": "expense",
+    "amount": 220,
+    "note": "Desk and chair"
+  },
+  {
+    "id": "txn_028",
+    "date": "2024-03-01",
+    "description": "Metro Card",
+    "category": "Transport",
+    "type": "expense",
+    "amount": 33,
+    "note": "Monthly transit pass"
+  },
+  {
+    "id": "txn_029",
+    "date": "2024-02-29",
+    "description": "Restaurant Dinner",
+    "category": "Food & Drink",
+    "type": "expense",
+    "amount": 112,
+    "note": "Anniversary dinner"
+  },
+  {
+    "id": "txn_030",
+    "date": "2024-02-28",
+    "description": "Freelance Bonus",
+    "category": "Income",
+    "type": "income",
+    "amount": 300,
+    "note": "Project completion bonus"
+  }
+]

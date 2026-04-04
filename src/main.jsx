@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import Layout from './app/layout';
 import RootPage from './app/page';
@@ -12,7 +12,7 @@ import './styles/globals.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AppProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<RootPage />} />
@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="insights" element={<InsightsPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AppProvider>
   </React.StrictMode>
 );

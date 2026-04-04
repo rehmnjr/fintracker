@@ -1,6 +1,24 @@
 import { useMemo } from 'react';
 import { useApp } from '../context/AppContext';
 
+/**
+ * Get a grouping key for a transaction based on the selected groupBy field.
+ */
+const getGroupKey = (txn, groupBy) => {
+  switch (groupBy) {
+    case 'category':
+      return txn.category;
+    case 'type':
+      return txn.type.charAt(0).toUpperCase() + txn.type.slice(1);
+    case 'month': {
+      const d = new Date(txn.date);
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+    }
+    default:
+      return null;
+  }
+};
+
 export function useTransactions() {
   const { transactions, filters } = useApp();
 
@@ -52,6 +70,28 @@ export function useTransactions() {
     return list;
   }, [transactions, filters]);
 
+  // Group transactions by the selected field
+  const grouped = useMemo(() => {
+    if (!filters.groupBy || filters.groupBy === 'none') return null;
+
+    const groups = {};
+    filtered.forEach((txn) => {
+      const key = getGroupKey(txn, filters.groupBy);
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(txn);
+    });
+
+    // Sort groups alphabetically (or chronologically for months)
+    const sortedEntries = Object.entries(groups).sort(([a], [b]) => {
+      if (filters.groupBy === 'month') {
+        return new Date(b) - new Date(a); // newest first
+      }
+      return a.localeCompare(b);
+    });
+
+    return sortedEntries;
+  }, [filtered, filters.groupBy]);
+
   const totalIncome = useMemo(
     () => transactions.filter((t) => t.type === 'income').reduce((s, t) => s + t.amount, 0),
     [transactions]
@@ -62,5 +102,5 @@ export function useTransactions() {
     [transactions]
   );
 
-  return { filtered, totalIncome, totalExpenses };
+  return { filtered, grouped, totalIncome, totalExpenses };
 }

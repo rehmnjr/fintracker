@@ -33,6 +33,7 @@ export function AppProvider({ children }) {
     type: 'all',
     sortBy: 'date',
     sortDir: 'desc',
+    groupBy: 'none',
   });
 
   // ─── Persist role ───────────────────────────────────────────────

@@ -1,0 +1,14 @@
+[
+  { "month": "Apr", "balance": 18200, "income": 6800, "expenses": 3100 },
+  { "month": "May", "balance": 19400, "income": 7100, "expenses": 2900 },
+  { "month": "Jun", "balance": 18800, "income": 6900, "expenses": 3400 },
+  { "month": "Jul", "balance": 20600, "income": 7400, "expenses": 2800 },
+  { "month": "Aug", "balance": 21200, "income": 7600, "expenses": 3200 },
+  { "month": "Sep", "balance": 20900, "income": 7200, "expenses": 3500 },
+  { "month": "Oct", "balance": 22100, "income": 7800, "expenses": 2950 },
+  { "month": "Nov", "balance": 21700, "income": 7500, "expenses": 3600 },
+  { "month": "Dec", "balance": 23400, "income": 8200, "expenses": 3100 },
+  { "month": "Jan", "balance": 22800, "income": 7900, "expenses": 3300 },
+  { "month": "Feb", "balance": 23900, "income": 8000, "expenses": 3050 },
+  { "month": "Mar", "balance": 24680, "income": 7892, "expenses": 3418 }
+]

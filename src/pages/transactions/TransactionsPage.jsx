@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Plus, Download } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Plus, Download, ChevronDown } from 'lucide-react';
 import FilterBar from '../../components/transactions/FilterBar';
 import TransactionTable from '../../components/transactions/TransactionTable';
 import TransactionForm from '../../components/transactions/TransactionForm';
 import { useApp } from '../../context/AppContext';
 import { useRole } from '../../hooks/useRole';
 import { useTransactions } from '../../hooks/useTransactions';
-import { exportToCSV } from '../../utils/calculateInsights';
+import { exportToCSV, exportToJSON } from '../../utils/calculateInsights';
 import { formatCurrency } from '../../utils/formatCurrency';
 
 export default function TransactionsPage() {
@@ -16,6 +16,19 @@ export default function TransactionsPage() {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [editData, setEditData] = useState(null);
+  const [exportOpen, setExportOpen] = useState(false);
+  const exportRef = useRef(null);
+
+  // Close export dropdown on outside click
+  useEffect(() => {
+    const handler = (e) => {
+      if (exportRef.current && !exportRef.current.contains(e.target)) {
+        setExportOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
 
   const handleEdit = (txn) => {
     setEditData(txn);
@@ -42,16 +55,47 @@ export default function TransactionsPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          {/* Export */}
-          <button
-            id="export-csv"
-            onClick={() => exportToCSV(filtered)}
-            className="btn-ghost gap-2 text-xs border py-2"
-            style={{ border: '1px solid rgba(255,255,255,0.08)' }}
-          >
-            <Download className="h-3.5 w-3.5" />
-            Export CSV
-          </button>
+          {/* Export dropdown */}
+          <div className="relative" ref={exportRef}>
+            <button
+              id="export-dropdown-toggle"
+              onClick={() => setExportOpen((o) => !o)}
+              className="btn-ghost gap-2 text-xs border py-2"
+              style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <Download className="h-3.5 w-3.5" />
+              Export
+              <ChevronDown className={`h-3 w-3 transition-transform ${exportOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {exportOpen && (
+              <div
+                className="absolute right-0 mt-1 w-40 z-30 rounded-xl overflow-hidden"
+                style={{
+                  background: 'rgba(15, 20, 40, 0.95)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  backdropFilter: 'blur(20px)',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
+                }}
+              >
+                <button
+                  id="export-csv"
+                  onClick={() => { exportToCSV(filtered); setExportOpen(false); }}
+                  className="w-full text-left px-4 py-2.5 text-sm text-foreground hover:bg-white/5 transition-colors"
+                >
+                  📄 Export as CSV
+                </button>
+                <button
+                  id="export-json"
+                  onClick={() => { exportToJSON(filtered); setExportOpen(false); }}
+                  className="w-full text-left px-4 py-2.5 text-sm text-foreground hover:bg-white/5 transition-colors"
+                  style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+                >
+                  📋 Export as JSON
+                </button>
+              </div>
+            )}
+          </div>
 
           {/* Add transaction (admin only) */}
           {can('add') && (

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "insight_001",
+    "type": "top_category",
+    "title": "Highest Spending Category",
+    "value": "Housing",
+    "detail": "₹1,800.00 — 52.7% of total expenses",
+    "trend": "stable",
+    "icon": "home",
+    "color": "#6366f1"
+  },
+  {
+    "id": "insight_002",
+    "type": "monthly_comparison",
+    "title": "Expenses vs Last Month",
+    "value": "+12.1%",
+    "detail": "Spent ₹368.76 more than February",
+    "trend": "up",
+    "icon": "trending-up",
+    "color": "#fb7185"
+  },
+  {
+    "id": "insight_003",
+    "type": "savings_rate",
+    "title": "Savings Rate",
+    "value": "56.7%",
+    "detail": "Excellent! You're saving more than half your income",
+    "trend": "up",
+    "icon": "piggy-bank",
+    "color": "#34d399"
+  },
+  {
+    "id": "insight_004",
+    "type": "income_growth",
+    "title": "Income Growth",
+    "value": "+8.2%",
+    "detail": "Income grew ₹595 compared to last month",
+    "trend": "up",
+    "icon": "trending-up",
+    "color": "#34d399"
+  },
+  {
+    "id": "insight_005",
+    "type": "top_recurring",
+    "title": "Top Recurring Expense",
+    "value": "Rent (₹1,800)",
+    "detail": "Housing alone accounts for more than half your budget",
+    "trend": "stable",
+    "icon": "repeat",
+    "color": "#fbbf24"
+  },
+  {
+    "id": "insight_006",
+    "type": "net_worth",
+    "title": "Net Worth Growth",
+    "value": "+₹780.50",
+    "detail": "Your balance grew by ₹780 this month",
+    "trend": "up",
+    "icon": "wallet",
+    "color": "#6366f1"
+  }
+]

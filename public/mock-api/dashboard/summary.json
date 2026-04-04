@@ -1,0 +1,10 @@
+{
+  "totalBalance": 24680.50,
+  "totalIncome": 7892.10,
+  "totalExpenses": 3418.76,
+  "savingsRate": 56.7,
+  "balanceTrend": 12.4,
+  "incomeTrend": 8.2,
+  "expensesTrend": -3.1,
+  "currency": "USD"
+}

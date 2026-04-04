@@ -28,12 +28,13 @@ function SortIcon({ column, sortBy, sortDir }) {
 
 export default function TransactionTable({ onEdit, loading }) {
   const { filters, updateFilters, handleDeleteTransaction } = useApp();
-  const { filtered } = useTransactions();
+  const { filtered, grouped } = useTransactions();
   const { can } = useRole();
   const [page, setPage] = useState(1);
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-  const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const isGrouped = filters.groupBy !== 'none' && grouped;
+  const totalPages = isGrouped ? 1 : Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const paginated = isGrouped ? filtered : filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   const handleSort = (key) => {
     if (!key) return;
@@ -103,6 +104,72 @@ export default function TransactionTable({ onEdit, loading }) {
                     />
                   </td>
                 </tr>
+              ) : isGrouped ? (
+                grouped.map(([groupName, items]) => (
+                  <React.Fragment key={groupName}>
+                    <tr className="bg-brand-500/10" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                      <td colSpan={6} className="px-5 py-2.5 text-xs font-bold text-brand-300 uppercase tracking-wider">
+                        {groupName} ({items.length})
+                      </td>
+                    </tr>
+                    {items.map((txn) => {
+                      const cat = getCategoryMeta(txn.category);
+                      const isIncome = txn.type === 'income';
+                      return (
+                        <tr
+                          key={txn.id}
+                          className="table-row-hover animate-fade-in"
+                          style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}
+                        >
+                          <td className="px-5 py-3.5 text-muted-foreground text-xs whitespace-nowrap">
+                            {formatDate(txn.date)}
+                          </td>
+                          <td className="px-5 py-3.5">
+                            <div>
+                              <p className="text-foreground font-medium">{txn.description}</p>
+                              {txn.note && <p className="text-muted-foreground text-xs mt-0.5">{txn.note}</p>}
+                            </div>
+                          </td>
+                          <td className="px-5 py-3.5">
+                            <span className="badge text-xs" style={{ background: cat.bgColor, color: cat.color }}>
+                              {txn.category}
+                            </span>
+                          </td>
+                          <td className="px-5 py-3.5">
+                            <span className={`badge text-xs capitalize ${isIncome ? 'bg-emerald-500/15 text-emerald-400' : 'bg-rose-500/15 text-rose-400'}`}>
+                              {txn.type}
+                            </span>
+                          </td>
+                          <td className="px-5 py-3.5 font-semibold whitespace-nowrap">
+                            <span className={isIncome ? 'text-emerald-400' : 'text-rose-400'}>
+                              {isIncome ? '+' : '-'}{formatCurrency(txn.amount)}
+                            </span>
+                          </td>
+                          <td className="px-5 py-3.5">
+                            {can('edit') && (
+                              <div className="flex items-center gap-1">
+                                <button
+                                  id={`edit-${txn.id}`}
+                                  onClick={() => onEdit(txn)}
+                                  className="h-7 w-7 rounded-lg flex items-center justify-center transition-all hover:bg-brand-500/20 text-muted-foreground hover:text-brand-400"
+                                >
+                                  <Pencil className="h-3.5 w-3.5" />
+                                </button>
+                                <button
+                                  id={`delete-${txn.id}`}
+                                  onClick={() => handleDelete(txn.id)}
+                                  className="h-7 w-7 rounded-lg flex items-center justify-center transition-all hover:bg-rose-500/20 text-muted-foreground hover:text-rose-400"
+                                >
+                                  <Trash2 className="h-3.5 w-3.5" />
+                                </button>
+                              </div>
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </React.Fragment>
+                ))
               ) : (
                 paginated.map((txn) => {
                   const cat = getCategoryMeta(txn.category);

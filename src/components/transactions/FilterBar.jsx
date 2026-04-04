@@ -1,16 +1,23 @@
 import React from 'react';
-import { Search, SlidersHorizontal, X } from 'lucide-react';
+import { Search, SlidersHorizontal, Layers, X } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { CATEGORIES, TRANSACTION_TYPES } from '../../constants/categories';
+
+const GROUP_OPTIONS = [
+  { id: 'none', label: 'No Grouping' },
+  { id: 'category', label: 'Category' },
+  { id: 'type', label: 'Type' },
+  { id: 'month', label: 'Month' },
+];
 
 export default function FilterBar() {
   const { filters, updateFilters } = useApp();
 
   const hasActiveFilters =
-    filters.search || filters.category !== 'all' || filters.type !== 'all';
+    filters.search || filters.category !== 'all' || filters.type !== 'all' || filters.groupBy !== 'none';
 
   const clearFilters = () => {
-    updateFilters({ search: '', category: 'all', type: 'all' });
+    updateFilters({ search: '', category: 'all', type: 'all', groupBy: 'none' });
   };
 
   return (
@@ -64,6 +71,23 @@ export default function FilterBar() {
         <SlidersHorizontal className="absolute right-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
       </div>
 
+      {/* Group by */}
+      <div className="relative">
+        <select
+          id="filter-group-by"
+          value={filters.groupBy}
+          onChange={(e) => updateFilters({ groupBy: e.target.value })}
+          className="glass-input appearance-none pr-8 cursor-pointer"
+        >
+          {GROUP_OPTIONS.map((opt) => (
+            <option key={opt.id} value={opt.id}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+        <Layers className="absolute right-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
+      </div>
+
       {/* Clear filters */}
       {hasActiveFilters && (
         <button
@@ -78,3 +102,4 @@ export default function FilterBar() {
     </div>
   );
 }
+

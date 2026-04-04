@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node -e 'const { spawn } = require(\"child_process\"); spawn(\"node\", [\"src/services/server.js\"], { stdio: \"inherit\" }); spawn(\"vite\", [], { stdio: \"inherit\" });'",
-    "api-server": "node src/services/server.js",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && npx gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
