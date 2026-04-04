@@ -1,3 +1,5 @@
+import { getCategoryMeta } from '../constants/categories';
+
 /**
  * Calculate insights from raw transaction data.
  */
@@ -33,6 +35,87 @@ export const getTopCategory = (transactions) => {
   if (!sorted.length) return null;
   const [category, amount] = sorted[0];
   return { category, amount };
+};
+
+export const getMonthlySummary = (transactions, monthYear) => {
+  const currentMonthTxns = transactions.filter(t => t.date.startsWith(monthYear));
+  const current = calculateSummary(currentMonthTxns);
+
+  const [year, month] = monthYear.split('-').map(Number);
+  let prevMonth = month - 1;
+  let prevYear = year;
+  if (prevMonth === 0) {
+    prevMonth = 12;
+    prevYear -= 1;
+  }
+  const prevMonthYear = `${prevYear}-${String(prevMonth).padStart(2, '0')}`;
+  
+  const prevMonthTxns = transactions.filter(t => t.date.startsWith(prevMonthYear));
+  const prev = calculateSummary(prevMonthTxns);
+
+  const calcTrend = (curr, old) => {
+    if (old === 0 && curr === 0) return 0;
+    if (old === 0) return 100;
+    return ((curr - old) / Math.abs(old)) * 100;
+  };
+
+  return {
+    totalBalance: current.balance,
+    totalIncome: current.income,
+    totalExpenses: current.expenses,
+    savingsRate: current.savingsRate,
+    balanceTrend: calcTrend(current.balance, prev.balance),
+    incomeTrend: calcTrend(current.income, prev.income),
+    expensesTrend: calcTrend(current.expenses, prev.expenses),
+  };
+};
+
+export const getCategoryBreakdownForMonth = (transactions, monthYear) => {
+  const currentMonthTxns = transactions.filter(t => t.date.startsWith(monthYear));
+  const totals = getCategoryTotals(currentMonthTxns);
+  
+  const totalExpenses = Object.values(totals).reduce((a, b) => a + b, 0);
+  
+  const breakdown = Object.entries(totals).map(([category, amount]) => {
+    const meta = getCategoryMeta(category);
+    return {
+      category,
+      amount,
+      percentage: totalExpenses > 0 ? parseFloat(((amount / totalExpenses) * 100).toFixed(1)) : 0,
+      color: meta.color,
+    };
+  });
+  
+  return breakdown.sort((a, b) => b.amount - a.amount);
+};
+
+export const build12MonthTrend = (transactions, targetMonthYear) => {
+  const [y, m] = targetMonthYear.split('-').map(Number);
+  const result = [];
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  
+  for (let i = 11; i >= 0; i--) {
+    let loopMonth = m - i;
+    let loopYear = y;
+    if (loopMonth <= 0) {
+      loopMonth += 12;
+      loopYear -= 1;
+    }
+    const loopMonthStr = String(loopMonth).padStart(2, '0');
+    const loopDatePrefix = `${loopYear}-${loopMonthStr}`;
+    
+    const monthTxns = transactions.filter(t => t.date.startsWith(loopDatePrefix));
+    const stats = calculateSummary(monthTxns);
+    
+    result.push({
+      month: monthNames[loopMonth - 1],
+      balance: stats.balance,
+      income: stats.income,
+      expenses: stats.expenses,
+    });
+  }
+  
+  return result;
 };
 
 export const exportToCSV = (transactions) => {
