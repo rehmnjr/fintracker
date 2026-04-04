@@ -9,12 +9,12 @@ import EmptyState from '../common/EmptyState';
 import { SkeletonRow } from '../common/Loader';
 
 const COLUMNS = [
-  { key: 'date',        label: 'Date',        sortable: true  },
-  { key: 'description', label: 'Description', sortable: true  },
-  { key: 'category',    label: 'Category',    sortable: true  },
-  { key: 'type',        label: 'Type',        sortable: true  },
-  { key: 'amount',      label: 'Amount',      sortable: true  },
-  { key: 'actions',     label: '',            sortable: false },
+  { key: 'date', label: 'Date', sortable: true },
+  { key: 'description', label: 'Description', sortable: true },
+  { key: 'category', label: 'Category', sortable: true },
+  { key: 'type', label: 'Type', sortable: true },
+  { key: 'amount', label: 'Amount', sortable: true },
+  { key: 'actions', label: '', sortable: false },
 ];
 
 const PAGE_SIZE = 10;
@@ -73,9 +73,8 @@ export default function TransactionTable({ onEdit, loading }) {
                 {COLUMNS.map((col) => (
                   <th
                     key={col.key}
-                    className={`px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground ${
-                      col.sortable ? 'cursor-pointer select-none hover:text-foreground' : ''
-                    }`}
+                    className={`px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground ${col.sortable ? 'cursor-pointer select-none hover:text-foreground' : ''
+                      }`}
                     onClick={() => col.sortable && handleSort(col.key)}
                   >
                     <div className="flex items-center gap-1">
@@ -145,11 +144,10 @@ export default function TransactionTable({ onEdit, loading }) {
                       {/* Type */}
                       <td className="px-5 py-3.5">
                         <span
-                          className={`badge text-xs capitalize ${
-                            isIncome
-                              ? 'bg-emerald-500/15 text-emerald-400'
-                              : 'bg-rose-500/15 text-rose-400'
-                          }`}
+                          className={`badge text-xs capitalize ${isIncome
+                            ? 'bg-emerald-500/15 text-emerald-400'
+                            : 'bg-rose-500/15 text-rose-400'
+                            }`}
                         >
                           {txn.type}
                         </span>
@@ -216,11 +214,10 @@ export default function TransactionTable({ onEdit, loading }) {
                   )}
                   <button
                     onClick={() => setPage(p)}
-                    className={`h-8 w-8 rounded-lg text-xs font-medium transition-all ${
-                      p === page
-                        ? 'bg-brand-500/20 text-brand-300 border border-brand-500/30'
-                        : 'btn-ghost py-1.5 px-2'
-                    }`}
+                    className={`h-8 w-8 rounded-lg text-xs font-medium transition-all ${p === page
+                      ? 'bg-brand-500/20 text-brand-300 border border-brand-500/30'
+                      : 'btn-ghost py-1.5 px-2'
+                      }`}
                   >
                     {p}
                   </button>

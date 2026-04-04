@@ -5,9 +5,9 @@ import { useApp } from '../../context/AppContext';
 import { ROLES } from '../../constants/roles';
 
 const PAGE_TITLES = {
-  '/dashboard':    { title: 'Dashboard',    description: 'Your financial overview' },
+  '/dashboard': { title: 'Dashboard', description: 'Your financial overview' },
   '/transactions': { title: 'Transactions', description: 'Manage your transactions' },
-  '/insights':     { title: 'Insights',     description: 'Spending patterns & analysis' },
+  '/insights': { title: 'Insights', description: 'Spending patterns & analysis' },
 };
 
 export default function Navbar({ onMenuClick }) {
@@ -18,7 +18,7 @@ export default function Navbar({ onMenuClick }) {
 
   return (
     <header
-      className="flex items-center justify-between px-4 sm:px-6 py-4 flex-shrink-0 gap-3 glass-panel border-b border-border"
+      className="flex items-center justify-between px-4 sm:px-6 py-3.5 flex-shrink-0 gap-3 glass-panel border-b border-border"
     >
       {/* Left: Hamburger (mobile only) + Page title */}
       <div className="flex items-center gap-3 min-w-0">
@@ -51,11 +51,10 @@ export default function Navbar({ onMenuClick }) {
       <div className="flex items-center gap-2 flex-shrink-0">
         {/* Role badge — hidden on very small screens */}
         <div
-          className={`hidden sm:flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium border transition-all ${
-            isAdmin
-              ? 'bg-brand-500/10 border-brand-500/20 text-brand-300'
-              : 'bg-secondary border-border text-muted-foreground'
-          }`}
+          className={`hidden sm:flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium border transition-all ${isAdmin
+            ? 'bg-brand-500/10 border-brand-500/20 text-brand-300'
+            : 'bg-secondary border-border text-muted-foreground'
+            }`}
         >
           {isAdmin ? <Shield className="h-3 w-3" /> : <Eye className="h-3 w-3" />}
           <span className="capitalize">{role}</span>
