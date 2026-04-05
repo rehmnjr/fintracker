@@ -124,6 +124,81 @@ export const build12MonthTrend = (transactions, targetMonthYear) => {
 };
 
 /**
+ * Generates dynamic insight items based on the transaction history for a specific month.
+ */
+export const generateDynamicInsights = (transactions, monthYear) => {
+  if (!transactions || transactions.length === 0 || !monthYear) return [];
+
+  const [year, month] = monthYear.split('-').map(Number);
+  const currentSummary = getMonthlySummary(transactions, monthYear);
+  const monthStats = calculateSummary(transactions.filter(t => t.date.startsWith(monthYear)));
+  const topCategory = getTopCategory(transactions.filter(t => t.date.startsWith(monthYear)));
+  
+  const insights = [];
+
+  // 1. Highest Spending Category
+  if (topCategory) {
+    const meta = getCategoryMeta(topCategory.category);
+    const percentage = monthStats.expenses > 0 ? ((topCategory.amount / monthStats.expenses) * 100).toFixed(1) : 0;
+    
+    insights.push({
+      id: 'insight_dyn_cat',
+      type: 'top_category',
+      title: 'Highest Spending Category',
+      value: topCategory.category,
+      detail: `₹${topCategory.amount.toLocaleString()} — ${percentage}% of monthly spending`,
+      trend: currentSummary.expensesTrend > 10 ? 'up' : currentSummary.expensesTrend < -10 ? 'down' : 'stable',
+      icon: meta.icon || 'home',
+      color: meta.color || '#6366f1'
+    });
+  }
+
+  // 2. Savings Rate Insight
+  insights.push({
+    id: 'insight_dyn_savings',
+    type: 'savings_rate',
+    title: 'Savings Ratio',
+    value: `${currentSummary.savingsRate.toFixed(1)}%`,
+    detail: currentSummary.savingsRate > 25 
+      ? "Excellent! You're building a strong financial cushion." 
+      : currentSummary.savingsRate > 0 
+      ? "Good stability, but try to aim for 20% savings." 
+      : "Caution: You spent more than you earned this month.",
+    trend: currentSummary.savingsRate > 20 ? 'up' : 'down',
+    icon: 'piggy-bank',
+    color: currentSummary.savingsRate > 15 ? '#34d399' : '#fb7185'
+  });
+
+  // 3. Monthly Change
+  insights.push({
+    id: 'insight_dyn_trend',
+    type: 'monthly_comparison',
+    title: 'Spending vs Last Month',
+    value: `${currentSummary.expensesTrend > 0 ? '+' : ''}${currentSummary.expensesTrend.toFixed(1)}%`,
+    detail: currentSummary.expensesTrend > 0 
+      ? 'Your spending has increased compared to last month.' 
+      : 'Great job! You reduced your spending this month.',
+    trend: currentSummary.expensesTrend > 5 ? 'up' : currentSummary.expensesTrend < -5 ? 'down' : 'stable',
+    icon: 'trending-up',
+    color: currentSummary.expensesTrend > 0 ? '#fb7185' : '#34d399'
+  });
+
+  // 4. Net Position
+  insights.push({
+    id: 'insight_dyn_net',
+    type: 'net_worth',
+    title: 'Monthly Net Position',
+    value: `₹${currentSummary.totalBalance.toLocaleString()}`,
+    detail: `Total profit/loss captured for ${new Date(year, month - 1).toLocaleString('default', { month: 'long' })}.`,
+    trend: currentSummary.totalBalance > 0 ? 'up' : 'down',
+    icon: 'wallet',
+    color: '#6366f1'
+  });
+
+  return insights;
+};
+
+/**
  * Provides a daily breakdown of income, expenses, and balance for a specific month.
  */
 export const getDailyTrendForMonth = (transactions, monthYear) => {

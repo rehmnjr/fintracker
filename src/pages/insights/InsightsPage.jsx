@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import InsightsCard from '../../components/insights/InsightsCard';
-import { SkeletonCard } from '../../components/common/Loader';
-import { getInsights } from '../../services/insightsService';
+import React, { useMemo, useState } from 'react';
+import { generateDynamicInsights, build12MonthTrend } from '../../utils/calculateInsights';
 import { useApp } from '../../context/AppContext';
 import { useTransactions } from '../../hooks/useTransactions';
 import { formatCurrency } from '../../utils/formatCurrency';
+import InsightsCard from '../../components/insights/InsightsCard';
+import { SkeletonCard } from '../../components/common/Loader';
 import {
   ResponsiveContainer,
   BarChart,
@@ -38,38 +38,68 @@ const CustomBarTooltip = ({ active, payload, label }) => {
 };
 
 export default function InsightsPage() {
-  const [insights, setInsights] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { transactions } = useApp();
+  const { transactions, txLoading } = useApp();
   const { totalIncome, totalExpenses } = useTransactions();
 
-  useEffect(() => {
-    getInsights()
-      .then(setInsights)
-      .finally(() => setLoading(false));
-  }, []);
+  const getCurrentMonth = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    return `${year}-${month}`;
+  };
 
-  // Build monthly comparison data from last 6 months (simulated from transactions)
-  const monthlyData = [
-    { month: 'Oct', income: 7800, expenses: 2950 },
-    { month: 'Nov', income: 7500, expenses: 3600 },
-    { month: 'Dec', income: 8200, expenses: 3100 },
-    { month: 'Jan', income: 7900, expenses: 3300 },
-    { month: 'Feb', income: 8000, expenses: 3050 },
-    { month: 'Mar', income: 7892, expenses: 3418 },
-  ];
+  const getMinMonth = () => {
+    if (!transactions || transactions.length === 0) return '2025-05';
+    const earliest = transactions.reduce((min, t) => (t.date < min ? t.date : min), transactions[0].date);
+    return earliest.substring(0, 7);
+  };
+
+  const [monthYear, setMonthYear] = useState(getCurrentMonth);
+
+  // Generate real-time insights for the selected month
+  const insights = useMemo(() => {
+    return generateDynamicInsights(transactions, monthYear);
+  }, [transactions, monthYear]);
+  
+  // Build monthly comparison data from last 6 months based on selection
+  const monthlyData = useMemo(() => {
+    return build12MonthTrend(transactions, monthYear).slice(-6);
+  }, [transactions, monthYear]);
+
+  const formattedMonth = useMemo(() => {
+    if (!monthYear) return '';
+    const [y, m] = monthYear.split('-');
+    const date = new Date(Number(y), Number(m) - 1);
+    return date.toLocaleString('default', { month: 'long', year: 'numeric' });
+  }, [monthYear]);
+
+  const loading = txLoading;
 
   return (
     <div className="p-6 space-y-6 animate-fade-in">
-      {/* Header */}
-      <div>
-        <p className="text-xs text-muted-foreground uppercase tracking-widest mb-0.5">
+      {/* Header row */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <p className="text-xs text-muted-foreground uppercase tracking-widest mb-0.5">
+            {formattedMonth}
+          </p>
+          <h2 className="text-xl font-bold text-foreground">
+            Financial{' '}
+            <span className="gradient-text">Insights</span>
+          </h2>
+        </div>
 
-        </p>
-        <h2 className="text-xl font-bold text-foreground">
-          Financial{' '}
-          <span className="gradient-text">Insights</span>
-        </h2>
+        <div className="flex items-center w-full sm:w-auto">
+          <input
+            type="month"
+            name="monthYear"
+            value={monthYear}
+            min={getMinMonth()}
+            max={getCurrentMonth()}
+            onChange={(e) => setMonthYear(e.target.value)}
+            className="glass-input flex-1 sm:flex-none text-sm h-[38px] py-1 text-muted-foreground"
+          />
+        </div>
       </div>
 
       {/* Insight cards */}
