@@ -9,6 +9,114 @@
     "id": "txn_1775228811224"
   },
   {
+    "description": "April Salary",
+    "amount": 6000,
+    "category": "Income",
+    "type": "income",
+    "date": "2026-04-01",
+    "note": "Monthly salary",
+    "id": "txn_031"
+  },
+  {
+    "description": "Grocery Store",
+    "amount": 210.75,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2026-04-02",
+    "note": "Weekly groceries",
+    "id": "txn_032"
+  },
+  {
+    "description": "Electricity Bill",
+    "amount": 145.2,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2026-04-04",
+    "note": "April electricity",
+    "id": "txn_033"
+  },
+  {
+    "description": "Uber Ride",
+    "amount": 32.4,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2026-04-05",
+    "note": "Office commute",
+    "id": "txn_034"
+  },
+  {
+    "description": "Netflix Subscription",
+    "amount": 15.99,
+    "category": "Entertainment",
+    "type": "expense",
+    "date": "2026-04-06",
+    "note": "Monthly subscription",
+    "id": "txn_035"
+  },
+  {
+    "description": "Restaurant Dinner",
+    "amount": 85.6,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2026-04-07",
+    "note": "Dinner with friends",
+    "id": "txn_036"
+  },
+  {
+    "description": "Freelance Project",
+    "amount": 1200,
+    "category": "Income",
+    "type": "income",
+    "date": "2026-04-08",
+    "note": "UI design project",
+    "id": "txn_037"
+  },
+  {
+    "description": "Pharmacy",
+    "amount": 56.3,
+    "category": "Health",
+    "type": "expense",
+    "date": "2026-04-09",
+    "note": "Medicines",
+    "id": "txn_038"
+  },
+  {
+    "description": "Clothing Store",
+    "amount": 180,
+    "category": "Shopping",
+    "type": "expense",
+    "date": "2026-04-10",
+    "note": "Summer clothes",
+    "id": "txn_039"
+  },
+  {
+    "description": "Internet Bill",
+    "amount": 60,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2026-04-11",
+    "note": "Monthly internet",
+    "id": "txn_040"
+  },
+  {
+    "description": "Coffee Shop",
+    "amount": 18.5,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2026-04-12",
+    "note": "Coffee & snacks",
+    "id": "txn_041"
+  },
+  {
+    "description": "Tution Salary",
+    "amount": 9000,
+    "category": "Education",
+    "type": "income",
+    "date": "2026-04-03",
+    "note": "Home Tution Salary",
+    "id": "txn_1775228811224"
+  },
+  {
     "description": "Fresh Grocers",
     "amount": 127.43,
     "category": "Groceries",

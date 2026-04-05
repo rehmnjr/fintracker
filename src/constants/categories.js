@@ -11,6 +11,7 @@ export const CATEGORIES = [
   { id: 'Education',    label: 'Education',    color: '#8b5cf6', bgColor: 'rgba(139,92,246,0.15)',  icon: 'graduation-cap' },
   { id: 'Miscellaneous',label: 'Miscellaneous',color: '#94a3b8', bgColor: 'rgba(148,163,184,0.15)', icon: 'more-horizontal' },
   { id: 'Income',       label: 'Income',       color: '#34d399', bgColor: 'rgba(52,211,153,0.15)',  icon: 'wallet' },
+  { id: 'Salary',       label: 'Salary',       color: '#10b981', bgColor: 'rgba(16,185,129,0.15)',  icon: 'banknote' },
 ];
 
 export const getCategoryMeta = (categoryId) => {

@@ -38,9 +38,13 @@ export const getTopCategory = (transactions) => {
 };
 
 export const getMonthlySummary = (transactions, monthYear) => {
-  const currentMonthTxns = transactions.filter(t => t.date.startsWith(monthYear));
-  const current = calculateSummary(currentMonthTxns);
+  if (!transactions || !monthYear) return null;
 
+  // Monthly stats for the current month
+  const currentMonthTxns = transactions.filter((t) => t.date.startsWith(monthYear));
+  const monthStats = calculateSummary(currentMonthTxns);
+
+  // Previous month data for trends
   const [year, month] = monthYear.split('-').map(Number);
   let prevMonth = month - 1;
   let prevYear = year;
@@ -49,9 +53,8 @@ export const getMonthlySummary = (transactions, monthYear) => {
     prevYear -= 1;
   }
   const prevMonthYear = `${prevYear}-${String(prevMonth).padStart(2, '0')}`;
-  
-  const prevMonthTxns = transactions.filter(t => t.date.startsWith(prevMonthYear));
-  const prev = calculateSummary(prevMonthTxns);
+  const prevMonthTxns = transactions.filter((t) => t.date.startsWith(prevMonthYear));
+  const prevStats = calculateSummary(prevMonthTxns);
 
   const calcTrend = (curr, old) => {
     if (old === 0 && curr === 0) return 0;
@@ -60,13 +63,13 @@ export const getMonthlySummary = (transactions, monthYear) => {
   };
 
   return {
-    totalBalance: current.balance,
-    totalIncome: current.income,
-    totalExpenses: current.expenses,
-    savingsRate: current.savingsRate,
-    balanceTrend: calcTrend(current.balance, prev.balance),
-    incomeTrend: calcTrend(current.income, prev.income),
-    expensesTrend: calcTrend(current.expenses, prev.expenses),
+    totalBalance: monthStats.balance, // Monthly Net (Income - Expense)
+    totalIncome: monthStats.income,
+    totalExpenses: monthStats.expenses,
+    savingsRate: monthStats.savingsRate,
+    balanceTrend: calcTrend(monthStats.balance, prevStats.balance),
+    incomeTrend: calcTrend(monthStats.income, prevStats.income),
+    expensesTrend: calcTrend(monthStats.expenses, prevStats.expenses),
   };
 };
 
@@ -90,6 +93,8 @@ export const getCategoryBreakdownForMonth = (transactions, monthYear) => {
 };
 
 export const build12MonthTrend = (transactions, targetMonthYear) => {
+  if (!transactions || !targetMonthYear) return [];
+
   const [y, m] = targetMonthYear.split('-').map(Number);
   const result = [];
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -102,20 +107,61 @@ export const build12MonthTrend = (transactions, targetMonthYear) => {
       loopYear -= 1;
     }
     const loopMonthStr = String(loopMonth).padStart(2, '0');
-    const loopDatePrefix = `${loopYear}-${loopMonthStr}`;
+    const loopMonthYear = `${loopYear}-${loopMonthStr}`;
     
-    const monthTxns = transactions.filter(t => t.date.startsWith(loopDatePrefix));
+    const monthTxns = transactions.filter((t) => t.date.startsWith(loopMonthYear));
     const stats = calculateSummary(monthTxns);
     
     result.push({
       month: monthNames[loopMonth - 1],
-      balance: stats.balance,
+      balance: stats.balance, // Monthly Net
       income: stats.income,
       expenses: stats.expenses,
     });
   }
-  
+
   return result;
+};
+
+/**
+ * Provides a daily breakdown of income, expenses, and balance for a specific month.
+ */
+export const getDailyTrendForMonth = (transactions, monthYear) => {
+  if (!transactions || !monthYear) return [];
+
+  const [year, month] = monthYear.split('-').map(Number);
+  const daysInMonth = new Date(year, month, 0).getDate();
+  const monthPrefix = monthYear + '-';
+
+  // Start with 0 balance for the month to show monthly net performance
+  let currentBalance = 0;
+
+  // Filter and group current month's transactions by day
+  const monthTxns = transactions.filter((t) => t.date.startsWith(monthPrefix));
+  const dailyMap = {};
+
+  monthTxns.forEach((t) => {
+    const day = parseInt(t.date.split('-')[2], 10);
+    if (!dailyMap[day]) dailyMap[day] = { income: 0, expenses: 0 };
+    if (t.type === 'income') dailyMap[day].income += t.amount;
+    else dailyMap[day].expenses += t.amount;
+  });
+
+  // Assemble the daily series
+  const series = [];
+  for (let d = 1; d <= daysInMonth; d++) {
+    const stats = dailyMap[d] || { income: 0, expenses: 0 };
+    currentBalance += stats.income - stats.expenses;
+
+    series.push({
+      day: String(d).padStart(2, '0'),
+      income: stats.income,
+      expenses: stats.expenses,
+      balance: currentBalance,
+    });
+  }
+
+  return series;
 };
 
 export const exportToCSV = (transactions) => {

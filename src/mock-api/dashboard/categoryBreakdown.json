@@ -1,11 +1,56 @@
 [
-  { "category": "Housing", "amount": 1800.00, "percentage": 52.7, "color": "#6366f1" },
-  { "category": "Food & Drink", "amount": 193.05, "percentage": 5.6, "color": "#34d399" },
-  { "category": "Groceries", "amount": 202.05, "percentage": 5.9, "color": "#fbbf24" },
-  { "category": "Shopping", "amount": 542.32, "percentage": 15.9, "color": "#f472b6" },
-  { "category": "Transport", "amount": 132.80, "percentage": 3.9, "color": "#60a5fa" },
-  { "category": "Entertainment", "amount": 62.96, "percentage": 1.8, "color": "#a78bfa" },
-  { "category": "Health", "amount": 218.20, "percentage": 6.4, "color": "#fb7185" },
-  { "category": "Utilities", "amount": 261.39, "percentage": 7.6, "color": "#2dd4bf" },
-  { "category": "Investments", "amount": 4.00, "percentage": 0.1, "color": "#f59e0b" }
+  {
+    "category": "Housing",
+    "amount": 1800.00,
+    "percentage": 52.7,
+    "color": "#6366f1"
+  },
+  {
+    "category": "Food & Drink",
+    "amount": 193.05,
+    "percentage": 5.6,
+    "color": "#34d399"
+  },
+  {
+    "category": "Groceries",
+    "amount": 202.05,
+    "percentage": 5.9,
+    "color": "#fbbf24"
+  },
+  {
+    "category": "Shopping",
+    "amount": 542.32,
+    "percentage": 15.9,
+    "color": "#f472b6"
+  },
+  {
+    "category": "Transport",
+    "amount": 132.80,
+    "percentage": 3.9,
+    "color": "#60a5fa"
+  },
+  {
+    "category": "Entertainment",
+    "amount": 62.96,
+    "percentage": 1.8,
+    "color": "#a78bfa"
+  },
+  {
+    "category": "Health",
+    "amount": 218.20,
+    "percentage": 6.4,
+    "color": "#fb7185"
+  },
+  {
+    "category": "Utilities",
+    "amount": 261.39,
+    "percentage": 7.6,
+    "color": "#2dd4bf"
+  },
+  {
+    "category": "Investments",
+    "amount": 4.00,
+    "percentage": 0.1,
+    "color": "#f59e0b"
+  }
 ]

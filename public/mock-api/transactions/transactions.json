@@ -4,278 +4,987 @@
     "amount": 9000,
     "category": "Education",
     "type": "income",
+    "date": "2026-04-01",
+    "note": "Home Tution Salary",
+    "id": "txn_030"
+  },
+  {
+    "description": "April Salary",
+    "amount": 6000,
+    "category": "Income",
+    "type": "income",
+    "date": "2026-04-01",
+    "note": "Monthly salary",
+    "id": "txn_031"
+  },
+  {
+    "description": "Grocery Store",
+    "amount": 210.75,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2026-04-02",
+    "note": "Weekly groceries",
+    "id": "txn_032"
+  },
+  {
+    "description": "Electricity Bill",
+    "amount": 145.2,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2026-04-02",
+    "note": "April electricity",
+    "id": "txn_033"
+  },
+  {
+    "description": "Uber Ride",
+    "amount": 32.4,
+    "category": "Transport",
+    "type": "expense",
     "date": "2026-04-03",
+    "note": "Office commute",
+    "id": "txn_034"
+  },
+  {
+    "description": "Netflix Subscription",
+    "amount": 15.99,
+    "category": "Entertainment",
+    "type": "expense",
+    "date": "2026-04-03",
+    "note": "Monthly subscription",
+    "id": "txn_035"
+  },
+  {
+    "description": "Restaurant Dinner",
+    "amount": 85.6,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2026-04-03",
+    "note": "Dinner with friends",
+    "id": "txn_036"
+  },
+  {
+    "description": "Freelance Project",
+    "amount": 1200,
+    "category": "Income",
+    "type": "income",
+    "date": "2026-04-04",
+    "note": "UI design project",
+    "id": "txn_037"
+  },
+  {
+    "description": "Pharmacy",
+    "amount": 56.3,
+    "category": "Health",
+    "type": "expense",
+    "date": "2026-04-04",
+    "note": "Medicines",
+    "id": "txn_038"
+  },
+  {
+    "description": "Clothing Store",
+    "amount": 180,
+    "category": "Shopping",
+    "type": "expense",
+    "date": "2026-04-04",
+    "note": "Summer clothes",
+    "id": "txn_039"
+  },
+  {
+    "description": "Internet Bill",
+    "amount": 60,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2026-04-05",
+    "note": "Monthly internet",
+    "id": "txn_040"
+  },
+  {
+    "description": "Coffee Shop",
+    "amount": 18.5,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2026-04-05",
+    "note": "Coffee & snacks",
+    "id": "txn_041"
+  },
+  {
+    "description": "Tution Salary",
+    "amount": 9000,
+    "category": "Education",
+    "type": "income",
+    "date": "2026-04-05",
     "note": "Home Tution Salary",
     "id": "txn_1775228811224"
   },
   {
-    "id": "txn_001",
-    "date": "2024-03-28",
     "description": "Fresh Grocers",
+    "amount": 127.43,
     "category": "Groceries",
     "type": "expense",
-    "amount": 127.43,
-    "note": "Weekly grocery run"
+    "date": "2026-03-28",
+    "note": "Weekly grocery run",
+    "id": "txn_001"
   },
   {
-    "id": "txn_002",
-    "date": "2024-03-27",
     "description": "Streaming Plus",
+    "amount": 249,
     "category": "Entertainment",
     "type": "expense",
-    "amount": 249,
-    "note": "Monthly subscription"
+    "date": "2026-03-27",
+    "note": "Monthly subscription",
+    "id": "txn_002"
   },
   {
-    "id": "txn_003",
-    "date": "2024-03-26",
     "description": "Salary Deposit",
+    "amount": 5800,
     "category": "Income",
     "type": "income",
-    "amount": 5800,
-    "note": "March payroll"
+    "date": "2026-03-26",
+    "note": "March payroll",
+    "id": "txn_003"
   },
   {
-    "id": "txn_004",
-    "date": "2024-03-25",
     "description": "City Gas Station",
+    "amount": 480,
     "category": "Transport",
     "type": "expense",
-    "amount": 480,
-    "note": "Fuel refill"
+    "date": "2026-03-25",
+    "note": "Fuel refill",
+    "id": "txn_004"
   },
   {
-    "id": "txn_005",
-    "date": "2024-03-24",
     "description": "Online Marketplace",
+    "amount": 139.99,
     "category": "Shopping",
     "type": "expense",
-    "amount": 139.99,
-    "note": "Annual membership"
+    "date": "2026-03-24",
+    "note": "Annual membership",
+    "id": "txn_005"
   },
   {
-    "id": "txn_006",
-    "date": "2024-03-23",
     "description": "Morning Brew Cafe",
+    "amount": 300,
     "category": "Food & Drink",
     "type": "expense",
-    "amount": 300,
-    "note": "Coffee & snack"
+    "date": "2026-03-23",
+    "note": "Coffee & snack",
+    "id": "txn_006"
   },
   {
-    "id": "txn_007",
-    "date": "2024-03-22",
     "description": "Freelance Payment",
+    "amount": 850,
     "category": "Income",
     "type": "income",
-    "amount": 850,
-    "note": "Web design project"
+    "date": "2026-03-22",
+    "note": "Web design project",
+    "id": "txn_007"
   },
   {
-    "id": "txn_008",
-    "date": "2024-03-21",
     "description": "Downtown Gym",
+    "amount": 24.99,
     "category": "Health",
     "type": "expense",
-    "amount": 24.99,
-    "note": "Monthly gym membership"
+    "date": "2026-03-21",
+    "note": "Monthly gym membership",
+    "id": "txn_008"
   },
   {
-    "id": "txn_009",
-    "date": "2024-03-20",
     "description": "Mobile Carrier",
+    "amount": 89,
     "category": "Utilities",
     "type": "expense",
-    "amount": 89,
-    "note": "Monthly phone plan"
+    "date": "2026-03-20",
+    "note": "Monthly phone plan",
+    "id": "txn_009"
   },
   {
-    "id": "txn_010",
-    "date": "2024-03-19",
     "description": "Quick Bites Grill",
+    "amount": 22.5,
     "category": "Food & Drink",
     "type": "expense",
-    "amount": 22.5,
-    "note": "Lunch with colleague"
+    "date": "2026-03-19",
+    "note": "Lunch with colleague",
+    "id": "txn_010"
   },
   {
-    "id": "txn_011",
-    "date": "2024-03-18",
     "description": "Dividend Income",
+    "amount": 234.6,
     "category": "Investments",
     "type": "income",
-    "amount": 234.6,
-    "note": "Q1 dividend"
+    "date": "2026-03-18",
+    "note": "Q1 dividend",
+    "id": "txn_011"
   },
   {
-    "id": "txn_012",
-    "date": "2024-03-17",
     "description": "General Store",
+    "amount": 87.33,
     "category": "Shopping",
     "type": "expense",
-    "amount": 87.33,
-    "note": "Household items"
+    "date": "2026-03-17",
+    "note": "Household items",
+    "id": "txn_012"
   },
   {
-    "id": "txn_013",
-    "date": "2024-03-16",
     "description": "Electricity Bill",
+    "amount": 112.4,
     "category": "Utilities",
     "type": "expense",
-    "amount": 112.4,
-    "note": "March electric"
+    "date": "2026-03-16",
+    "note": "March electric",
+    "id": "txn_013"
   },
   {
-    "id": "txn_014",
-    "date": "2024-03-15",
     "description": "Rent Payment",
+    "amount": 1800,
     "category": "Housing",
     "type": "expense",
-    "amount": 1800,
-    "note": "March rent"
+    "date": "2026-03-15",
+    "note": "March rent",
+    "id": "txn_014"
   },
   {
-    "id": "txn_015",
-    "date": "2024-03-14",
     "description": "Food Delivery",
+    "amount": 39.8,
     "category": "Food & Drink",
     "type": "expense",
-    "amount": 39.8,
-    "note": "Dinner delivery"
+    "date": "2026-03-14",
+    "note": "Dinner delivery",
+    "id": "txn_015"
   },
   {
-    "id": "txn_016",
-    "date": "2024-03-13",
     "description": "Music Stream",
+    "amount": 9.99,
     "category": "Entertainment",
     "type": "expense",
-    "amount": 9.99,
-    "note": "Monthly music"
+    "date": "2026-03-13",
+    "note": "Monthly music",
+    "id": "txn_016"
   },
   {
-    "id": "txn_017",
-    "date": "2024-03-12",
     "description": "Side Business Revenue",
+    "amount": 620,
     "category": "Income",
     "type": "income",
-    "amount": 620,
-    "note": "Consulting fees"
+    "date": "2026-03-12",
+    "note": "Consulting fees",
+    "id": "txn_017"
   },
   {
-    "id": "txn_018",
-    "date": "2024-03-11",
     "description": "Corner Pharmacy",
+    "amount": 43.21,
     "category": "Health",
     "type": "expense",
-    "amount": 43.21,
-    "note": "Medication & vitamins"
+    "date": "2026-03-11",
+    "note": "Medication & vitamins",
+    "id": "txn_018"
   },
   {
-    "id": "txn_019",
-    "date": "2024-03-10",
     "description": "App Marketplace",
+    "amount": 6.99,
     "category": "Entertainment",
     "type": "expense",
-    "amount": 6.99,
-    "note": "App subscription"
+    "date": "2026-03-10",
+    "note": "App subscription",
+    "id": "txn_019"
   },
   {
-    "id": "txn_020",
-    "date": "2024-03-09",
     "description": "City Rides",
+    "amount": 31.6,
     "category": "Transport",
     "type": "expense",
-    "amount": 31.6,
-    "note": "Airport pickup"
+    "date": "2026-03-09",
+    "note": "Airport pickup",
+    "id": "txn_020"
   },
   {
-    "id": "txn_021",
-    "date": "2024-03-08",
     "description": "Fashion Outlet",
+    "amount": 95,
     "category": "Shopping",
     "type": "expense",
-    "amount": 95,
-    "note": "Clothes shopping"
+    "date": "2026-03-08",
+    "note": "Clothes shopping",
+    "id": "txn_021"
   },
   {
-    "id": "txn_022",
-    "date": "2024-03-07",
     "description": "Internet Bill",
+    "amount": 59.99,
     "category": "Utilities",
     "type": "expense",
-    "amount": 59.99,
-    "note": "Monthly internet"
+    "date": "2026-03-07",
+    "note": "Monthly internet",
+    "id": "txn_022"
   },
   {
-    "id": "txn_023",
-    "date": "2024-03-06",
     "description": "Neighborhood Market",
+    "amount": 74.62,
     "category": "Groceries",
     "type": "expense",
-    "amount": 74.62,
-    "note": "Groceries"
+    "date": "2026-03-06",
+    "note": "Groceries",
+    "id": "txn_023"
   },
   {
-    "id": "txn_024",
-    "date": "2024-03-05",
     "description": "Dental Checkup",
+    "amount": 150,
     "category": "Health",
     "type": "expense",
-    "amount": 150,
-    "note": "Routine checkup"
+    "date": "2026-03-05",
+    "note": "Routine checkup",
+    "id": "txn_024"
   },
   {
-    "id": "txn_025",
-    "date": "2024-03-04",
     "description": "Game Store",
+    "amount": 29.99,
     "category": "Entertainment",
     "type": "expense",
-    "amount": 29.99,
-    "note": "Game purchase"
+    "date": "2026-03-04",
+    "note": "Game purchase",
+    "id": "txn_025"
   },
   {
-    "id": "txn_026",
-    "date": "2024-03-03",
     "description": "Interest Income",
+    "amount": 87.5,
     "category": "Investments",
     "type": "income",
-    "amount": 87.5,
-    "note": "Savings account interest"
+    "date": "2026-03-03",
+    "note": "Savings account interest",
+    "id": "txn_026"
   },
   {
-    "id": "txn_027",
-    "date": "2024-03-02",
     "description": "Home Furnishings Co",
+    "amount": 220,
     "category": "Shopping",
     "type": "expense",
-    "amount": 220,
-    "note": "Desk and chair"
+    "date": "2026-03-02",
+    "note": "Desk and chair",
+    "id": "txn_027"
   },
   {
-    "id": "txn_028",
-    "date": "2024-03-01",
     "description": "Metro Card",
+    "amount": 33,
     "category": "Transport",
     "type": "expense",
-    "amount": 33,
-    "note": "Monthly transit pass"
+    "date": "2026-03-01",
+    "note": "Monthly transit pass",
+    "id": "txn_028"
   },
   {
-    "id": "txn_029",
-    "date": "2024-02-29",
     "description": "Restaurant Dinner",
+    "amount": 112,
     "category": "Food & Drink",
     "type": "expense",
-    "amount": 112,
-    "note": "Anniversary dinner"
+    "date": "2026-02-29",
+    "note": "Anniversary dinner",
+    "id": "txn_029"
   },
   {
-    "id": "txn_030",
-    "date": "2024-02-28",
     "description": "Freelance Bonus",
+    "amount": 300,
     "category": "Income",
     "type": "income",
+    "date": "2026-02-28",
+    "note": "Project completion bonus",
+    "id": "txn_030"
+  },
+  {
+    "description": "Salary",
+    "amount": 6000,
+    "category": "Income",
+    "type": "income",
+    "date": "2026-02-01",
+    "note": "Monthly salary",
+    "id": "txn_feb_01"
+  },
+  {
+    "description": "Freelance Work",
+    "amount": 1100,
+    "category": "Income",
+    "type": "income",
+    "date": "2026-02-03",
+    "note": "Design project",
+    "id": "txn_feb_02"
+  },
+  {
+    "description": "Groceries",
+    "amount": 185.4,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2026-02-05",
+    "note": "Weekly groceries",
+    "id": "txn_feb_03"
+  },
+  {
+    "description": "Electricity Bill",
+    "amount": 140.2,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2026-02-08",
+    "note": "Electric bill",
+    "id": "txn_feb_04"
+  },
+  {
+    "description": "Dining Out",
+    "amount": 72.5,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2026-02-12",
+    "note": "Dinner",
+    "id": "txn_feb_05"
+  },
+  {
+    "description": "Fuel",
+    "amount": 420,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2026-02-15",
+    "note": "Fuel refill",
+    "id": "txn_feb_06"
+  },
+  {
+    "description": "Pharmacy",
+    "amount": 60.8,
+    "category": "Health",
+    "type": "expense",
+    "date": "2026-02-18",
+    "note": "Medicines",
+    "id": "txn_feb_07"
+  },
+  {
+    "description": "Shopping",
+    "amount": 190,
+    "category": "Shopping",
+    "type": "expense",
+    "date": "2026-02-22",
+    "note": "Clothing",
+    "id": "txn_feb_08"
+  },
+  {
+    "description": "Salary",
+    "amount": 6000,
+    "category": "Income",
+    "type": "income",
+    "date": "2026-01-01",
+    "note": "Monthly salary",
+    "id": "txn_jan_01"
+  },
+  {
+    "description": "Rent",
+    "amount": 1800,
+    "category": "Housing",
+    "type": "expense",
+    "date": "2026-01-02",
+    "note": "Rent",
+    "id": "txn_jan_02"
+  },
+  {
+    "description": "Groceries",
+    "amount": 150.2,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2026-01-05",
+    "note": "Groceries",
+    "id": "txn_jan_03"
+  },
+  {
+    "description": "Internet",
+    "amount": 60,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2026-01-07",
+    "note": "Internet bill",
+    "id": "txn_jan_04"
+  },
+  {
+    "description": "Freelance",
+    "amount": 800,
+    "category": "Income",
+    "type": "income",
+    "date": "2026-01-10",
+    "note": "Client work",
+    "id": "txn_jan_05"
+  },
+  {
+    "description": "Dining",
+    "amount": 65.5,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2026-01-15",
+    "note": "Dinner",
+    "id": "txn_jan_06"
+  },
+  {
+    "description": "Transport",
+    "amount": 35,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2026-01-20",
+    "note": "Cab",
+    "id": "txn_jan_07"
+  },
+  {
+    "description": "Salary",
+    "amount": 5800,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-12-01",
+    "note": "Salary",
+    "id": "txn_dec_01"
+  },
+  {
+    "description": "Bonus",
+    "amount": 1200,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-12-03",
+    "note": "Year bonus",
+    "id": "txn_dec_02"
+  },
+  {
+    "description": "Shopping",
     "amount": 300,
-    "note": "Project completion bonus"
+    "category": "Shopping",
+    "type": "expense",
+    "date": "2025-12-05",
+    "note": "Winter wear",
+    "id": "txn_dec_03"
+  },
+  {
+    "description": "Groceries",
+    "amount": 200.5,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2025-12-06",
+    "note": "Groceries",
+    "id": "txn_dec_04"
+  },
+  {
+    "description": "Electricity",
+    "amount": 130,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2025-12-08",
+    "note": "Bill",
+    "id": "txn_dec_05"
+  },
+  {
+    "description": "Dining",
+    "amount": 150,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2025-12-10",
+    "note": "Party",
+    "id": "txn_dec_06"
+  },
+  {
+    "description": "Fuel",
+    "amount": 410,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2025-12-12",
+    "note": "Fuel",
+    "id": "txn_dec_07"
+  },
+  {
+    "description": "Gift Purchase",
+    "amount": 250,
+    "category": "Shopping",
+    "type": "expense",
+    "date": "2025-12-15",
+    "note": "Gifts",
+    "id": "txn_dec_08"
+  },
+  {
+    "description": "Streaming",
+    "amount": 15.99,
+    "category": "Entertainment",
+    "type": "expense",
+    "date": "2025-12-18",
+    "note": "Subscription",
+    "id": "txn_dec_09"
+  },
+  {
+    "description": "Pharmacy",
+    "amount": 70,
+    "category": "Health",
+    "type": "expense",
+    "date": "2025-12-20",
+    "note": "Medicines",
+    "id": "txn_dec_10"
+  },
+  {
+    "description": "Salary",
+    "amount": 5800,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-11-01",
+    "id": "txn_nov_01"
+  },
+  {
+    "description": "Groceries",
+    "amount": 135.2,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2025-11-03",
+    "id": "txn_nov_02"
+  },
+  {
+    "description": "Fuel",
+    "amount": 390,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2025-11-06",
+    "id": "txn_nov_03"
+  },
+  {
+    "description": "Dining",
+    "amount": 85.5,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2025-11-09",
+    "id": "txn_nov_04"
+  },
+  {
+    "description": "Electricity",
+    "amount": 120,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2025-11-12",
+    "id": "txn_nov_05"
+  },
+  {
+    "description": "Freelance",
+    "amount": 600,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-11-18",
+    "id": "txn_nov_06"
+  },
+  {
+    "description": "Salary",
+    "amount": 5800,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-10-01",
+    "id": "txn_oct_01"
+  },
+  {
+    "description": "Groceries",
+    "amount": 145.3,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2025-10-02",
+    "id": "txn_oct_02"
+  },
+  {
+    "description": "Shopping",
+    "amount": 210,
+    "category": "Shopping",
+    "type": "expense",
+    "date": "2025-10-05",
+    "id": "txn_oct_03"
+  },
+  {
+    "description": "Dining",
+    "amount": 95,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2025-10-07",
+    "id": "txn_oct_04"
+  },
+  {
+    "description": "Fuel",
+    "amount": 405,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2025-10-09",
+    "id": "txn_oct_05"
+  },
+  {
+    "description": "Internet",
+    "amount": 60,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2025-10-11",
+    "id": "txn_oct_06"
+  },
+  {
+    "description": "Freelance",
+    "amount": 750,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-10-14",
+    "id": "txn_oct_07"
+  },
+  {
+    "description": "Gym",
+    "amount": 25,
+    "category": "Health",
+    "type": "expense",
+    "date": "2025-10-18",
+    "id": "txn_oct_08"
+  },
+  {
+    "description": "Entertainment",
+    "amount": 20,
+    "category": "Entertainment",
+    "type": "expense",
+    "date": "2025-10-22",
+    "id": "txn_oct_09"
+  },
+  {
+    "description": "Salary",
+    "amount": 5800,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-09-01",
+    "id": "txn_sep_01"
+  },
+  {
+    "description": "Groceries",
+    "amount": 130.5,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2025-09-04",
+    "id": "txn_sep_02"
+  },
+  {
+    "description": "Dining",
+    "amount": 80,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2025-09-08",
+    "id": "txn_sep_03"
+  },
+  {
+    "description": "Fuel",
+    "amount": 370,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2025-09-12",
+    "id": "txn_sep_04"
+  },
+  {
+    "description": "Internet",
+    "amount": 60,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2025-09-15",
+    "id": "txn_sep_05"
+  },
+  {
+    "description": "Salary",
+    "amount": 5800,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-08-01",
+    "id": "txn_aug_01"
+  },
+  {
+    "description": "Freelance",
+    "amount": 500,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-08-03",
+    "id": "txn_aug_02"
+  },
+  {
+    "description": "Groceries",
+    "amount": 140,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2025-08-05",
+    "id": "txn_aug_03"
+  },
+  {
+    "description": "Dining",
+    "amount": 90,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2025-08-07",
+    "id": "txn_aug_04"
+  },
+  {
+    "description": "Fuel",
+    "amount": 395,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2025-08-10",
+    "id": "txn_aug_05"
+  },
+  {
+    "description": "Shopping",
+    "amount": 180,
+    "category": "Shopping",
+    "type": "expense",
+    "date": "2025-08-12",
+    "id": "txn_aug_06"
+  },
+  {
+    "description": "Electricity",
+    "amount": 115,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2025-08-15",
+    "id": "txn_aug_07"
+  },
+  {
+    "description": "Pharmacy",
+    "amount": 50,
+    "category": "Health",
+    "type": "expense",
+    "date": "2025-08-18",
+    "id": "txn_aug_08"
+  },
+  {
+    "description": "Salary",
+    "amount": 5800,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-07-01",
+    "id": "txn_jul_01"
+  },
+  {
+    "description": "Groceries",
+    "amount": 135,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2025-07-03",
+    "id": "txn_jul_02"
+  },
+  {
+    "description": "Dining",
+    "amount": 85,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2025-07-06",
+    "id": "txn_jul_03"
+  },
+  {
+    "description": "Fuel",
+    "amount": 380,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2025-07-08",
+    "id": "txn_jul_04"
+  },
+  {
+    "description": "Internet",
+    "amount": 60,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2025-07-10",
+    "id": "txn_jul_05"
+  },
+  {
+    "description": "Freelance",
+    "amount": 650,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-07-15",
+    "id": "txn_jul_06"
+  },
+  {
+    "description": "Salary",
+    "amount": 5800,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-06-01",
+    "id": "txn_jun_01"
+  },
+  {
+    "description": "Groceries",
+    "amount": 125,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2025-06-04",
+    "id": "txn_jun_02"
+  },
+  {
+    "description": "Dining",
+    "amount": 75,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2025-06-06",
+    "id": "txn_jun_03"
+  },
+  {
+    "description": "Fuel",
+    "amount": 360,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2025-06-08",
+    "id": "txn_jun_04"
+  },
+  {
+    "description": "Electricity",
+    "amount": 110,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2025-06-10",
+    "id": "txn_jun_05"
+  },
+  {
+    "description": "Gym",
+    "amount": 25,
+    "category": "Health",
+    "type": "expense",
+    "date": "2025-06-12",
+    "id": "txn_jun_06"
+  },
+  {
+    "description": "Freelance",
+    "amount": 700,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-06-18",
+    "id": "txn_jun_07"
+  },
+  {
+    "description": "Salary",
+    "amount": 5800,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-05-01",
+    "id": "txn_may_01"
+  },
+  {
+    "description": "Groceries",
+    "amount": 120,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2025-05-03",
+    "id": "txn_may_02"
+  },
+  {
+    "description": "Dining",
+    "amount": 70,
+    "category": "Food & Drink",
+    "type": "expense",
+    "date": "2025-05-05",
+    "id": "txn_may_03"
+  },
+  {
+    "description": "Fuel",
+    "amount": 350,
+    "category": "Transport",
+    "type": "expense",
+    "date": "2025-05-07",
+    "id": "txn_may_04"
+  },
+  {
+    "description": "Internet",
+    "amount": 60,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2025-05-10",
+    "id": "txn_may_05"
+  },
+  {
+    "description": "Freelance",
+    "amount": 500,
+    "category": "Income",
+    "type": "income",
+    "date": "2025-05-15",
+    "id": "txn_may_06"
   }
 ]
